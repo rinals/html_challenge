@@ -28,3 +28,46 @@ Chrome Developer tab and inspect element tool can be used to identify the div ta
 
 ### JSON result output
 json package can conveniently output lists of dictionaries into json file.
+
+## Part 2 - Mars Weather
+Packages used:
+1. splinter
+2. selenium web driver
+3. ChromeDriverManager
+4. BeautifulSoup
+5. matplotlib
+6. pandas
+
+### Chrome Driver
+Just like in the news activity, figure out the chrome driver path to open the url.
+
+### Beautiful Soup
+Explore the webpage using Chrome developer inspect element to figure out the div tag for the mars weather table.
+Find table with the class 'table'.
+
+### Table exploration
+Find the header 'th'.
+Find each row 'tr'
+Within each row 'td' is the value for each column.
+
+Add the header and all rows to Pandas data frame.
+
+### Data type
+By default all column data type in the Dataframe will be Object (string).
+Inspect columns and cast each column into correct data type:
+1. id               : int
+2. terrestrial_date : datetime
+3. sol              : int
+4. ls               : int
+5. month            : int
+6. min_temp         : float
+7. pressure         : float
+
+### Analysis
+1. Months - Unique values in the month column
+2. Number of martian days - Unique values in the sol column
+3. Average minimum temperature - pandas groupby month and use the mean function.
+4. Plot the average minimum temperature and sort the columns to figure out coldes and hottest
+5. Plot the average pressure and sort columns to figure out min and max pressure months.
+6. Plotting daily minimum temperature for all the sols, we can visually see a pattern with minimum and maximum daily temperature. If we note the difference between troughs or peaks the number of days in one martian year is 690.
+7. Save all data in dataframe to a CSV
